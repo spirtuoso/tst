@@ -10,16 +10,16 @@ import java.util.logging.Logger;
 
 public class AddPage extends BasePageObject {
 
-    @FindBy(id="id_title")
+    @FindBy(id = "id_title")
     private WebElement blogTitle; //селектор Названия
 
-    @FindBy(id="id_slug")
+    @FindBy(id = "id_slug")
     private WebElement blogSlug; //селектор Слаг
 
-    @FindBy(id="id_text_markdown")
+    @FindBy(id = "id_text_markdown")
     private WebElement blogMarkdown; //селектор Markdown
 
-    @FindBy(id="id_text")
+    @FindBy(id = "id_text")
     private WebElement blogText; //селектор текста
 
     @FindBy(className = "default")
@@ -28,34 +28,35 @@ public class AddPage extends BasePageObject {
     @FindBy(className = "deletelink")
     private WebElement deleteLink; //селектор кнопки для удаления
 
-    public AddPage(WebDriver driver){
+    public AddPage(WebDriver driver) {
         super(driver);
     }
 
-    public void textToBlogTitle(){
+    public void textToBlogTitle() {
         Random random = new Random();
         blogTitle.sendKeys("Title" + random.nextInt());
 
     }
-    public String blogTitle(){
 
-    return blogTitle.getAttribute("value"); //получение данных названия записи
+    public String blogTitle() {
+
+        return blogTitle.getAttribute("value"); //получение данных названия записи
     }
 
-    public void textToBlogSlug(){
+    public void textToBlogSlug() {
         Random random = new Random();
         blogSlug.clear(); //очистим запись, т.к. туда пишет по умолчанию тоже, что и в blogTitle
         blogSlug.sendKeys("Slug" + random.nextInt());
 
     }
 
-    public void textToBlogMarkdown(){
+    public void textToBlogMarkdown() {
         Random random = new Random();
         blogMarkdown.sendKeys("Markdown" + random.nextInt());
 
     }
 
-    public void textToBlogText (){
+    public void textToBlogText() {
         Random random = new Random();
         blogText.sendKeys("Text" + random.nextInt());
 

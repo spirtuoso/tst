@@ -7,10 +7,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePageObject {
 
-    @FindBy(id="id_username")
+    @FindBy(id = "id_username")
     WebElement userName; //селектор для имени пользователя
 
-    @FindBy(id="id_password")
+    @FindBy(id = "id_password")
     WebElement password; //селектор для пароля
 
     @FindBy(className = "submit-row")

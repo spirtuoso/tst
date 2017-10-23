@@ -9,28 +9,29 @@ import org.openqa.selenium.support.FindBy;
 public class ControlPanelPage extends BasePageObject {
 
 
-    @FindBy(css="a[href='/admin/blog/entry/add/']")
+    @FindBy(css = "a[href='/admin/blog/entry/add/']")
     private WebElement addEntryButton; //селектор добавить новую запись
 
-   @FindBy(xpath="//div[@class='dashboard-module-content']//a[text()='Entries']")
-     private WebElement entryChangeButton; //селектор изменения записи
+    @FindBy(xpath = "//div[@class='dashboard-module-content']//a[text()='Entries']")
+    private WebElement entryChangeButton; //селектор изменения записи
 
-   private String controlPanelTitle;
+    private String controlPanelTitle;
+
     public ControlPanelPage(WebDriver driver) {
         super(driver);
         controlPanelTitle = driver.getTitle();
     }
 
-    public void clickEntryButton()    {
+    public void clickEntryButton() {
         addEntryButton.click();
     }
 
-    public void clickEntryChangeButton(){
+    public void clickEntryChangeButton() {
 
-           entryChangeButton.click();
+        entryChangeButton.click();
     }
 
-    public String getControlPanelDashboardUserName(){
-        return controlPanelTitle ;
+    public String getControlPanelDashboardUserName() {
+        return controlPanelTitle;
     }
 }
